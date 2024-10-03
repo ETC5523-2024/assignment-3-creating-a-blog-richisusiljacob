@@ -5,9 +5,75 @@ about:
   template: jolla
   links:
     - icon: github
-      text: Github
-      href: https://github.com/etc5523-2022
-
+      text: "Github"
+      href: "https://github.com/richisusiljacob"
+    - icon: linkedin
+      text: "LinkedIn"
+      href: "https://www.linkedin.com/in/richi-susil-jacob-06948319a"
+editor:
+  markdown:
+    wrap: "sentence"
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+### Professional Summary
+
+A skilled Technical Analyst with over two years of experience in development, implementation, and support.
+Expertise in diagnostics, troubleshooting, and managing large datasets.
+Known for identifying process inefficiencies and delivering actionable insights.
+Recognized for innovative problem-solving abilities and strong communication skills, with a passion for Data Science, Big Data Analytics, and Software Development.
+
+### Accomplishments
+
+Awarded KPMG Encore Awards – Rising Star, within two months of employment.
+
+### Skills
+
+Strong communication skills
+
+Proficient in Microsoft Office
+
+SQL and Python
+
+Expertise in data collection, mining, and analysis
+
+Experience in roaming and network maintenance
+
+Business valuation and process workflow
+
+### Work Experience
+
+#### Front-End Team Member, Woolworths Supermarkets, Melbourne (03/2024 – Present)
+
+Provided excellent customer service and communication, ensuring a positive shopping experience.
+
+Managed point-of-sale (POS) systems efficiently and handled customer inquiries.
+
+Led team activities to ensure smooth store operations.
+
+Processed and dispatched online orders, maintaining accuracy and timeliness.
+
+#### Technical Analyst, KPMG, India (07/2022 – 02/2024)
+
+Supported the roaming function of leading operators in the Middle East, creating reliable systems to track international roaming performance.
+
+Coordinated employee training on system updates and best practices.
+
+Experience in IREG testing for voice, GPRS management, and familiarity with GSM testing standards.
+
+Conducted quality assurance and control of support tickets.
+
+Tested and validated roaming services for GSM, GPRS, LTE, VoLTE, and 5G technologies.
+
+Contributed to creating a risk control matrix for a leading African telecom organization, identifying gaps and providing recommendations.
+
+#### GRCS Intern, KPMG, India (01/2022 – 07/2022)
+
+Worked on proposals and engagements involving large datasets, using Hadoop and SQL for data extraction and transformation.
+
+Developed KPIs and generated analytical reports.
+
+Managed daily communications with roaming partners, averaging 30 interactions per day.
+
+Actively contributed to team meetings, offering insights for problem-solving and innovation.
+
+Assisted in completing projects from concept to implementation.

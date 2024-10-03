@@ -2,15 +2,17 @@ project:
   type: website
 
 website:
-  title: "blog-template"
+  title: "Data Stories by Richi Susil Jacob"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/etc5523-2022
+        href: https://github.com/richisusiljacob
+      - href: index.qmd
+        text: Blog
 format:
   html:
-    theme: cosmo
+    theme: slate
     css: styles.css
 
 

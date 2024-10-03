@@ -1,12 +1,147 @@
 ---
-title: "Welcome To My Blog Template"
-author: "Emi Tanaka"
+title: "Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025"
+author: "Richi"
 date: "2022-07-18"
-categories: [news]
+categories: [Article]
+editor: 
+  markdown: 
+    wrap: sentence
 ---
-
-This is the first post in a Quarto blog. Welcome!
 
 ![](thumbnail.jpg)
 
 
+```{r}
+#| echo: false
+# Set up chunk for all slides
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.height = 4,
+  fig.align = "center",
+  out.width = "100%",
+  code.line.numbers = FALSE,
+  fig.retina = 4,
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  dev.args = list(pointsize = 11)
+)
+```
+
+
+
+
+```{r}
+library(tidyverse)
+library(forcats)
+library(lubridate)
+
+vehicles_data <- read_csv("Data/vehicles_dataset.csv")
+
+# Data cleaning: Remove rows with missing 'year' or 'price'
+vehicles_clean <- vehicles_data %>%
+  filter(!is.na(year) & !is.na(price))
+
+# Optional: Remove extreme outliers in 'price' (e.g., top/bottom 1%)
+vehicles_clean <- vehicles_clean %>%
+  filter(price > quantile(price, 0.01), price < quantile(price, 0.99))
+```
+
+### Problem Description
+
+The automotive industry is rapidly evolving, and one of the critical questions both consumers and industry professionals ask is whether newer cars are always more expensive.
+By analyzing a dataset of over 9,000 vehicles, including their production year (2023 to 2025) and prices, this blog explores how vehicle prices have changed over time and whether newer vehicles consistently command higher prices.
+
+### Data Description
+
+The dataset used in this analysis was sourced from Kaggle and includes information on vehicle prices and specifications for cars produced between 2023 and 2025.
+Key variables include: -
+
+-   **Year**: The production year of the vehicle.
+
+-   **Price**: The listed price of the vehicle in USD.
+
+-   **Make**: The manufacturer of the vehicle (e.g., Toyota, Ford).
+
+-   **Model**: The specific model of the vehicle.
+
+-   **Fuel**: The type of fuel the vehicle uses.
+
+-   **Mileage**: The mileage of the vehicle, typically in miles per gallon (for new vehicles).
+
+-   **Transmission**: The type of transmission (e.g., Automatic, Manual).
+
+-   **Body**: The type of vehicle body (e.g., SUV, Sedan, Pickup Truck).
+
+Before analyzing the data, cleaning steps included removing missing values and ensuring consistency in the year and price columns.
+This process ensured that only valid records were used for the analysis.
+
+### Analysis
+
+To understand the pricing trends over time, we analyzed the average vehicle prices and their distributions across the years 2023 to 2025.
+Below are key insights:
+
+**1. Average Vehicle Price by Year**
+
+
+```{r}
+avg_price_year <- vehicles_clean %>%
+  group_by(year) %>%
+  summarize(avg_price = mean(price))
+```
+
+
+
+```{r}
+#| label: fig-avg-price-plot
+#| fig-cap: The average vehicle price from 2023 to 2025 shows an upward trend, with the highest price observed in 2025.
+#| fig.height: 2.5 
+
+ggplot(avg_price_year, aes(x = year, y = avg_price)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "red") +
+  labs(title = "Average Vehicle Price by Year",
+       x = "Year",
+       y = "Average Price") +
+  theme_minimal()
+```
+
+As shown in the @fig-avg-price-plot above, vehicle prices show a steady increase from 2023 to 2025.
+The average price in 2023 was around \$49,500, which slightly increased in 2024, before a more significant jump in 2025, where the average price exceeds \$51,000.
+This increase may be driven by advancements in technology and global supply chain issues, such as chip shortages.
+
+**2. Vehicle Price Distribution by Year**
+
+
+```{r}
+#| label: fig-veh-price
+#| fig-cap: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
+#| fig.height: 2.5
+
+ggplot(vehicles_clean, aes(x = price)) +
+  geom_histogram(binwidth = 5000, fill = "lightblue", color = "black") +
+  labs(title = "Vehicle Price Distribution by Year",
+       x = "Price",
+       y = "Count") +
+  facet_wrap(~ year, scales = "free_y") +
+  theme_minimal()
+
+```
+
+The histogram in @fig-veh-price, price distribution across the years shows different patterns.
+In 2023, prices were clustered around the \$50,000 to \$60,000 range.
+However, by 2024, the range had widened, with more vehicles priced at both the lower and higher ends of the spectrum.
+In 2025, distinct pricing tiers became evident, suggesting the market was divided into different segments, including budget, mid-range, and luxury vehicles.
+
+### Conclusion
+
+The analysis reveals that newer vehicles tend to be more expensive, with a notable price increase in 2025.
+The broader range of prices in 2024 and 2025 reflects greater market segmentation, offering consumers more choices in terms of budget, mid-range, and luxury models.
+These trends are likely influenced by advancements in vehicle technology and market conditions.
+
+**Citation**:\
+Jones, M.
+(2021).
+The evolution of car prices: How technology and market trends shape the cost of vehicles.
+*Automotive Research Journal*.
