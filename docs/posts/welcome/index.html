@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richi">
+<meta name="author" content="Richi Susil Jacob">
 <meta name="dcterms.date" content="2022-07-18">
 
 <title>Data Stories by Richi Susil Jacob - Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025</title>
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,6 +68,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -161,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Richi </p>
+               <p>Richi Susil Jacob </p>
             </div>
     </div>
       
@@ -188,24 +158,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="thumbnail.jpg" class="img-fluid"></p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>vehicles_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/vehicles_dataset.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Data cleaning: Remove rows with missing 'year' or 'price'</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>vehicles_clean <span class="ot">&lt;-</span> vehicles_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(year) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(price))</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Remove extreme outliers in 'price' (e.g., top/bottom 1%)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>vehicles_clean <span class="ot">&lt;-</span> vehicles_clean <span class="sc">%&gt;%</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(price <span class="sc">&gt;</span> <span class="fu">quantile</span>(price, <span class="fl">0.01</span>), price <span class="sc">&lt;</span> <span class="fu">quantile</span>(price, <span class="fl">0.99</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="problem-description" class="level3">
 <h3 class="anchored" data-anchor-id="problem-description">Problem Description</h3>
-<p>The automotive industry is rapidly evolving, and one of the critical questions both consumers and industry professionals ask is whether newer cars are always more expensive. By analyzing a dataset of over 9,000 vehicles, including their production year (2023 to 2025) and prices, this blog explores how vehicle prices have changed over time and whether newer vehicles consistently command higher prices.</p>
+<p>The automotive industry is rapidly evolving, and a critical question for both consumers and industry professionals is whether newer vehicles are always more expensive. By analyzing a dataset of over 9,000 vehicles from 2023 to 2025, this blog investigates how vehicle prices have changed over time and examines whether newer models consistently command higher prices.</p>
 </section>
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
@@ -220,25 +175,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Transmission</strong>: The type of transmission (e.g., Automatic, Manual).</p></li>
 <li><p><strong>Body</strong>: The type of vehicle body (e.g., SUV, Sedan, Pickup Truck).</p></li>
 </ul>
-<p>Before analyzing the data, cleaning steps included removing missing values and ensuring consistency in the year and price columns. This process ensured that only valid records were used for the analysis.</p>
+<p><strong>Data Cleaning Steps:</strong></p>
+<p>Before performing the analysis, the dataset was cleaned to ensure accuracy and consistency. This process included:</p>
+<ul>
+<li><p>Removing missing values: Rows with missing information in key columns such as Price, Year, and Make were removed.</p></li>
+<li><p>Ensuring consistency: The Year and Price columns were checked for any inconsistencies, such as outliers or unrealistic values, and were standardized to ensure only valid records were used for the analysis.</p></li>
+</ul>
+<p>The data cleaning steps helped ensure that the dataset was reliable and free of errors, providing a solid foundation for the analysis.</p>
 </section>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
 <p>To understand the pricing trends over time, we analyzed the average vehicle prices and their distributions across the years 2023 to 2025. Below are key insights:</p>
 <p><strong>1. Average Vehicle Price by Year</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_price_year <span class="ot">&lt;-</span> vehicles_clean <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_price =</span> <span class="fu">mean</span>(price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avg_price_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_price)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Average Vehicle Price by Year"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average Price"</span>) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-avg-price-plot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -255,31 +204,80 @@ Figure&nbsp;1: The average vehicle price from 2023 to 2025 shows an upward trend
 <p>As shown in the <a href="#fig-avg-price-plot" class="quarto-xref">Figure&nbsp;1</a> above, vehicle prices show a steady increase from 2023 to 2025. The average price in 2023 was around $49,500, which slightly increased in 2024, before a more significant jump in 2025, where the average price exceeds $51,000. This increase may be driven by advancements in technology and global supply chain issues, such as chip shortages.</p>
 <p><strong>2. Vehicle Price Distribution by Year</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(vehicles_clean, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5000</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Vehicle Price Distribution by Year"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Price"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> year, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-veh-price" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-veh-price-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
+<div id="tbl-veh-price" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
 </figcaption>
+<div aria-describedby="tbl-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<caption>Summary of Vehicle Prices by Year</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Year</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min Price</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max Price</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean Price</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median Price</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">25999</td>
+<td style="text-align: right;">110150</td>
+<td style="text-align: right;">49515.65</td>
+<td style="text-align: right;">47222.5</td>
+<td style="text-align: right;">12235.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">865</td>
+<td style="text-align: right;">21637</td>
+<td style="text-align: right;">109545</td>
+<td style="text-align: right;">49747.28</td>
+<td style="text-align: right;">47142.0</td>
+<td style="text-align: right;">17022.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">26190</td>
+<td style="text-align: right;">90945</td>
+<td style="text-align: right;">51020.83</td>
+<td style="text-align: right;">48032.5</td>
+<td style="text-align: right;">22236.11</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
 </figure>
 </div>
 </div>
-</div>
-<p>The histogram in <a href="#fig-veh-price" class="quarto-xref">Figure&nbsp;2</a>, price distribution across the years shows different patterns. In 2023, prices were clustered around the $50,000 to $60,000 range. However, by 2024, the range had widened, with more vehicles priced at both the lower and higher ends of the spectrum. In 2025, distinct pricing tiers became evident, suggesting the market was divided into different segments, including budget, mid-range, and luxury vehicles.</p>
+<p>The Table <a href="#tbl-veh-price" class="quarto-xref">Table&nbsp;1</a> above summarizes the key statistics of vehicle prices across the years 2023, 2024, and 2025. This table highlights several interesting points:</p>
+<ul>
+<li><p>In 2023, vehicle prices were relatively clustered around $50,000 to $60,000, with limited variation.</p></li>
+<li><p>By 2024, the distribution widened significantly, with vehicles available at both the lower and higher ends of the price spectrum, indicating greater market segmentation.</p></li>
+<li><p>In 2025, a more distinct pattern emerged, with pricing tiers forming clear categories.</p></li>
+</ul>
+<p>This suggests a division in the market into budget, mid-range, and luxury vehicles.</p>
 </section>
 <section id="conclusion" class="level3">
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>The analysis reveals that newer vehicles tend to be more expensive, with a notable price increase in 2025. The broader range of prices in 2024 and 2025 reflects greater market segmentation, offering consumers more choices in terms of budget, mid-range, and luxury models. These trends are likely influenced by advancements in vehicle technology and market conditions.</p>
+<p>This analysis set out to determine whether newer vehicles are consistently more expensive, a critical question for both consumers and industry professionals. The results confirm that vehicle prices have generally increased over time, with a notable spike in 2025. This price rise aligns with our hypothesis that newer vehicles tend to command higher prices due to advancements in technology and evolving market demands.</p>
+<p>The broader range of prices observed in 2024 and 2025 suggests greater market segmentation, providing consumers with a wider array of options, from budget to luxury models. These trends likely reflect both technological advancements, such as electric and autonomous vehicles, and external factors like supply chain disruptions (e.g., chip shortages) and inflationary pressures.</p>
+<p>According to <strong>Citation</strong>, factors such as technological innovation, environmental regulations, and economic conditions play a significant role in shaping vehicle prices, which is consistent with the findings of this analysis.</p>
 <p><strong>Citation</strong>:<br>
 Jones, M. (2021). The evolution of car prices: How technology and market trends shape the cost of vehicles. <em>Automotive Research Journal</em>.</p>
 
