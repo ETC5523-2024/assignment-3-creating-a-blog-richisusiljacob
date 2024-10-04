@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richi Susil Jacob">
-<meta name="dcterms.date" content="2022-07-18">
 
-<title>Data Stories by Richi Susil Jacob - Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025</title>
+<title>Data Stories by Richi Susil Jacob - When Data Hits Different</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,59 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,23 +68,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<script>
 
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
 
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
-<link rel="stylesheet" href="../../styles.css">
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Data Stories by Richi Susil Jacob</span>
     </a>
   </div>
@@ -129,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Richi Susil Jacob</span></a>
   </li>  
   <li class="nav-item compact">
@@ -138,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -151,183 +171,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Article</div>
-              </div>
-                  </div>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">When Data Hits Different</h1>
+                      </div>
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Richi Susil Jacob </p>
-            </div>
-    </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
-      </div>
-    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Article">Article <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<section id="problem-description" class="level3">
-<h3 class="anchored" data-anchor-id="problem-description">Problem Description</h3>
-<p>The automotive industry is rapidly evolving, and a critical question for both consumers and industry professionals is whether newer vehicles are always more expensive. By analyzing a dataset of over 9,000 vehicles from 2023 to 2025, this blog investigates how vehicle prices have changed over time and examines whether newer models consistently command higher prices.</p>
-</section>
-<section id="data-description" class="level3">
-<h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
-<p>The dataset used in this analysis was sourced from Kaggle and includes information on vehicle prices and specifications for cars produced between 2023 and 2025. Key variables include: -</p>
-<ul>
-<li><p><strong>Year</strong>: The production year of the vehicle.</p></li>
-<li><p><strong>Price</strong>: The listed price of the vehicle in USD.</p></li>
-<li><p><strong>Make</strong>: The manufacturer of the vehicle (e.g., Toyota, Ford).</p></li>
-<li><p><strong>Model</strong>: The specific model of the vehicle.</p></li>
-<li><p><strong>Fuel</strong>: The type of fuel the vehicle uses.</p></li>
-<li><p><strong>Mileage</strong>: The mileage of the vehicle, typically in miles per gallon (for new vehicles).</p></li>
-<li><p><strong>Transmission</strong>: The type of transmission (e.g., Automatic, Manual).</p></li>
-<li><p><strong>Body</strong>: The type of vehicle body (e.g., SUV, Sedan, Pickup Truck).</p></li>
-</ul>
-<p><strong>Data Cleaning Steps:</strong></p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data cleaning: Remove rows with missing 'year' or 'price'</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vehicles_clean <span class="ot">&lt;-</span> vehicles_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(year) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(price))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Remove extreme outliers in 'price' (e.g., top/bottom 1%)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>vehicles_clean <span class="ot">&lt;-</span> vehicles_clean <span class="sc">%&gt;%</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(price <span class="sc">&gt;</span> <span class="fu">quantile</span>(price, <span class="fl">0.01</span>), price <span class="sc">&lt;</span> <span class="fu">quantile</span>(price, <span class="fl">0.99</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Before performing the analysis, the dataset was cleaned to ensure accuracy and consistency. This process included:</p>
-<ul>
-<li><p>Removing missing values: Rows with missing information in key columns such as Price, Year, and Make were removed.</p></li>
-<li><p>Ensuring consistency: The Year and Price columns were checked for any inconsistencies, such as outliers or unrealistic values, and were standardized to ensure only valid records were used for the analysis.</p></li>
-</ul>
-<p>The data cleaning steps helped ensure that the dataset was reliable and free of errors, providing a solid foundation for the analysis.</p>
-</section>
-<section id="analysis" class="level3">
-<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
-<p>To understand the pricing trends over time, we analyzed the average vehicle prices and their distributions across the years 2023 to 2025. Below are key insights:</p>
-<p><strong>1. Average Vehicle Price by Year</strong></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-avg-price-plot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-avg-price-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-avg-price-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-avg-price-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The average vehicle price from 2023 to 2025 shows an upward trend, with the highest price observed in 2025.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>As shown in the <a href="#fig-avg-price-plot" class="quarto-xref">Figure&nbsp;1</a> above, vehicle prices show a steady increase from 2023 to 2025. The average price in 2023 was around $49,500, which slightly increased in 2024, before a more significant jump in 2025, where the average price exceeds $51,000. This increase may be driven by advancements in technology and global supply chain issues, such as chip shortages.</p>
-<p><strong>2. Vehicle Price Distribution by Year</strong></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-veh-price" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
-</figcaption>
-<div aria-describedby="tbl-veh-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
-<caption>Summary of Vehicle Prices by Year</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;" data-quarto-table-cell-role="th">Year</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Min Price</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Max Price</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Mean Price</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Median Price</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">SD Price</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">2023</td>
-<td style="text-align: right;">88</td>
-<td style="text-align: right;">25999</td>
-<td style="text-align: right;">110150</td>
-<td style="text-align: right;">49515.65</td>
-<td style="text-align: right;">47222.5</td>
-<td style="text-align: right;">12235.28</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2024</td>
-<td style="text-align: right;">865</td>
-<td style="text-align: right;">21637</td>
-<td style="text-align: right;">109545</td>
-<td style="text-align: right;">49747.28</td>
-<td style="text-align: right;">47142.0</td>
-<td style="text-align: right;">17022.59</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2025</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">26190</td>
-<td style="text-align: right;">90945</td>
-<td style="text-align: right;">51020.83</td>
-<td style="text-align: right;">48032.5</td>
-<td style="text-align: right;">22236.11</td>
-</tr>
-</tbody>
-</table>
-</div>
 
 
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>The Table <a href="#tbl-veh-price" class="quarto-xref">Table&nbsp;1</a> above summarizes the key statistics of vehicle prices across the years 2023, 2024, and 2025. This table highlights several interesting points:</p>
-<ul>
-<li><p>In 2023, vehicle prices were relatively clustered around $50,000 to $60,000, with limited variation.</p></li>
-<li><p>By 2024, the distribution widened significantly, with vehicles available at both the lower and higher ends of the price spectrum, indicating greater market segmentation.</p></li>
-<li><p>In 2025, a more distinct pattern emerged, with pricing tiers forming clear categories.</p></li>
-</ul>
-<p>This suggests a division in the market into budget, mid-range, and luxury vehicles.</p>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>This analysis set out to determine whether newer vehicles are consistently more expensive, a critical question for both consumers and industry professionals. The results confirm that vehicle prices have generally increased over time, with a notable spike in 2025. This price rise aligns with our hypothesis that newer vehicles tend to command higher prices due to advancements in technology and evolving market demands.</p>
-<p>The broader range of prices observed in 2024 and 2025 suggests greater market segmentation, providing consumers with a wider array of options, from budget to luxury models. These trends likely reflect both technological advancements, such as electric and autonomous vehicles, and external factors like supply chain disruptions (e.g., chip shortages) and inflationary pressures.</p>
-<p>According to <strong>Citation</strong>, factors such as technological innovation, environmental regulations, and economic conditions play a significant role in shaping vehicle prices, which is consistent with the findings of this analysis.</p>
-<p><strong>Citation</strong>:<br>
-Jones, M. (2021). The evolution of car prices: How technology and market trends shape the cost of vehicles. <em>Automotive Research Journal</em>.</p>
 
 
-</section>
-
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Article" data-listing-date-sort="1727964000000" data-listing-file-modified-sort="1728045903458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1028">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\welcome\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/welcome/index.html" class="no-external">Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/welcome/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Article'); return false;">
+Article
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/welcome/index.html" class="no-external">The automotive industry is rapidly evolving, and a critical question for both consumers and industry professionals is whether newer vehicles are always more expensive. By…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html" class="no-external">
+<div class="listing-date">
+Oct 4, 2024
+</div>
+<div class="listing-author">
+Richi Susil Jacob
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

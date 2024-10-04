@@ -1,12 +1,21 @@
 ---
 title: "Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025"
 author: "Richi Susil Jacob"
-date: "2022-07-18"
+date: "2024-10-04"
 categories: [Article]
 editor: 
   markdown: 
     wrap: sentence
 ---
+<div class="post-summary">
+  <img src="images/vehicle_price_trends.jpg" alt="Vehicle Price Trends">
+  <div class="text">
+    <p>
+      The automotive industry is rapidly evolving, and a critical question for both consumers and industry professionals is whether newer vehicles are always more expensive. 
+    </p>
+    <p>By examining data from 2023 to 2025, we can analyze trends and market segmentation.</p>
+  </div>
+</div>
 
 ![](thumbnail.jpg)
 
@@ -155,7 +164,7 @@ kable(summary_table,
 
 ```
 
-The Table @tbl-veh-price above summarizes the key statistics of vehicle prices across the years 2023, 2024, and 2025.
+The @tbl-veh-price above summarizes the key statistics of vehicle prices across the years 2023, 2024, and 2025.
 This table highlights several interesting points:
 
 -   In 2023, vehicle prices were relatively clustered around \$50,000 to \$60,000, with limited variation.

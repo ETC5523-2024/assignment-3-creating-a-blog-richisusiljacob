@@ -1,12 +1,66 @@
 ---
-title: "When Data Hits Different"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: ""
+engine: knitr
+format: 
+  html
 ---
+
+```{css}
+#| echo: false
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background-image: url('images/data_banner.jpg'); /* Set the background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Adjust text to stand out over the background */
+.bg-txt {
+  text-align: center;
+  font-family: 'Norican', cursive;
+  font-size: 2.5em;
+  color: #fff;
+  margin-top: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds a glowing shadow effect to the text */
+}
+
+/* Bubble effect for the main image */
+.bg-img img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 50px; /* Increased border-radius for more of a bubble effect */
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.7); /* Adds shadow to create depth */
+  transition: transform 0.3s ease; /* Adds animation for hover effect */
+}
+
+/* Hover effect for the bubble-like image */
+.bg-img img:hover {
+  transform: scale(1.05); /* Slightly increases size when hovered, enhancing the bubble effect */
+}
+
+/* Bubble effect for the Explore button */
+.explore-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 40px;
+  font-size: 1.2em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded corners for bubble effect */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.7); /* Adds shadow to create depth */
+  transition: transform 0.3s ease; /* Adds animation for hover effect */
+}
+
+/* Hover effect for the button */
+.explore-button:hover {
+  transform: scale(1.1); /* Button grows slightly larger on hover */
+}
+```
+<link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet"> <div class="bg-txt">Welcome to </div> <div class="bg-img"> <a href="blog.html"> <img id="home" src="images/data_banner.png" alt="The Big Data Bang"> </a> </div>

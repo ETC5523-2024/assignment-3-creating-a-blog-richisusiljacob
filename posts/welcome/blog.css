@@ -1,0 +1,127 @@
+/* Blog-specific styles */
+
+body {
+  color: #f0f0f0 !important;
+  background-color: #0f0f1e; /* Dark theme for your blog */
+  font-family: "Tahoma", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #e94560; /* Reddish-pink headings */
+}
+
+a {
+  color: #e94560; /* Reddish-pink links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6f91;
+}
+
+.navbar-dark {
+  background-color: #1a1a2e;
+}
+
+.quarto-title-banner {
+  background-color: #1a1a2e;
+}
+
+.nav-footer {
+  background-color: #1a1a2e;
+  color: #b5b4b0;
+}
+
+.blog-title {
+  text-align: center;
+  font-family: 'Norican', cursive;
+  font-size: 2.5em;
+  color: #e94560;
+  margin-top: 20px;
+}
+
+.blog-post {
+  margin: 20px;
+  padding: 20px;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  color: #ff6f91;
+}
+
+.blog-post p {
+  text-align: justify;
+}
+
+.blog-post a {
+  color: #ff6f91;
+}
+
+figure {
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+figure figcaption {
+  font-size: 12px;
+  color: #697582;
+}
+
+/* New adjustments for image and layout to prevent overlap */
+.bg-img {
+  position: relative;
+  text-align: center;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.bg-img img {
+  width: 90%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.bg-txt {
+  text-align: center;
+  font-family: 'Norican', cursive;
+  font-size: 2em; /* Increase the font size */
+  margin-top: 20px; /* Add space between text and image */
+}
+
+.post-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.post-summary img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-summary .text {
+  flex: 1;
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a2e;
+  color: #b5b4b0;
+}
+
+footer a {
+  color: #e94560;
+}
