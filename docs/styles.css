@@ -1,0 +1,13 @@
+/* Custom styles for your website */
+.navbar-dark, .quarto-title-banner {
+  background-color: #1a1a2e; /* Dark blue background for navbar and title banner */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #e94560; /* Reddish-pink for headings to contrast against dark background */
+}
+
+body {
+  background-color: #0f0f1e; /* Very dark background for a sleek look */
+  color: #f0f0f0; /* Light text for readability on the dark background */
+}
