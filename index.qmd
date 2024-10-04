@@ -1,5 +1,5 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "When Data Hits Different"
 listing:
   contents: posts
   sort: "date desc"

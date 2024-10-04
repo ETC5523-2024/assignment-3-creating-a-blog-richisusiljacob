@@ -75,6 +75,16 @@ Key variables include: -
 
 **Data Cleaning Steps:**
 
+```{r echo = TRUE}
+# Data cleaning: Remove rows with missing 'year' or 'price'
+vehicles_clean <- vehicles_data %>%
+  filter(!is.na(year) & !is.na(price))
+
+# Optional: Remove extreme outliers in 'price' (e.g., top/bottom 1%)
+vehicles_clean <- vehicles_clean %>%
+  filter(price > quantile(price, 0.01), price < quantile(price, 0.99))
+```
+
 Before performing the analysis, the dataset was cleaned to ensure accuracy and consistency.
 This process included:
 
