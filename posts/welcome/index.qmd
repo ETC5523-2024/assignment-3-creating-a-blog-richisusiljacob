@@ -1,6 +1,6 @@
 ---
 title: "Rising Vehicle Prices and Market Segmentation: Analyzing Trends from 2023 to 2025"
-author: "Richi"
+author: "Richi Susil Jacob"
 date: "2022-07-18"
 categories: [Article]
 editor: 
@@ -9,7 +9,6 @@ editor:
 ---
 
 ![](thumbnail.jpg)
-
 
 ```{r}
 #| echo: false
@@ -29,13 +28,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-
-
 ```{r}
 library(tidyverse)
 library(forcats)
 library(lubridate)
+library(kableExtra)
+library(dplyr)
+library(knitr)
 
 vehicles_data <- read_csv("Data/vehicles_dataset.csv")
 
@@ -50,8 +49,8 @@ vehicles_clean <- vehicles_clean %>%
 
 ### Problem Description
 
-The automotive industry is rapidly evolving, and one of the critical questions both consumers and industry professionals ask is whether newer cars are always more expensive.
-By analyzing a dataset of over 9,000 vehicles, including their production year (2023 to 2025) and prices, this blog explores how vehicle prices have changed over time and whether newer vehicles consistently command higher prices.
+The automotive industry is rapidly evolving, and a critical question for both consumers and industry professionals is whether newer vehicles are always more expensive.
+By analyzing a dataset of over 9,000 vehicles from 2023 to 2025, this blog investigates how vehicle prices have changed over time and examines whether newer models consistently command higher prices.
 
 ### Data Description
 
@@ -74,8 +73,16 @@ Key variables include: -
 
 -   **Body**: The type of vehicle body (e.g., SUV, Sedan, Pickup Truck).
 
-Before analyzing the data, cleaning steps included removing missing values and ensuring consistency in the year and price columns.
-This process ensured that only valid records were used for the analysis.
+**Data Cleaning Steps:**
+
+Before performing the analysis, the dataset was cleaned to ensure accuracy and consistency.
+This process included:
+
+-   Removing missing values: Rows with missing information in key columns such as Price, Year, and Make were removed.
+
+-   Ensuring consistency: The Year and Price columns were checked for any inconsistencies, such as outliers or unrealistic values, and were standardized to ensure only valid records were used for the analysis.
+
+The data cleaning steps helped ensure that the dataset was reliable and free of errors, providing a solid foundation for the analysis.
 
 ### Analysis
 
@@ -84,14 +91,11 @@ Below are key insights:
 
 **1. Average Vehicle Price by Year**
 
-
 ```{r}
 avg_price_year <- vehicles_clean %>%
   group_by(year) %>%
   summarize(avg_price = mean(price))
 ```
-
-
 
 ```{r}
 #| label: fig-avg-price-plot
@@ -113,32 +117,55 @@ This increase may be driven by advancements in technology and global supply chai
 
 **2. Vehicle Price Distribution by Year**
 
-
 ```{r}
-#| label: fig-veh-price
-#| fig-cap: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
+#| label: tbl-veh-price
+#| tbl-cap: The distribution of vehicle prices across 2023, 2024, and 2025 shows an increasing variation, with distinct pricing tiers observed in 2025.
 #| fig.height: 2.5
 
-ggplot(vehicles_clean, aes(x = price)) +
-  geom_histogram(binwidth = 5000, fill = "lightblue", color = "black") +
-  labs(title = "Vehicle Price Distribution by Year",
-       x = "Price",
-       y = "Count") +
-  facet_wrap(~ year, scales = "free_y") +
-  theme_minimal()
+
+
+# Summarize vehicle prices by year
+summary_table <- vehicles_clean %>%
+  group_by(year) %>%
+  summarise(
+    count = n(),
+    min_price = min(price, na.rm = TRUE),
+    max_price = max(price, na.rm = TRUE),
+    mean_price = mean(price, na.rm = TRUE),
+    median_price = median(price, na.rm = TRUE),
+    sd_price = sd(price, na.rm = TRUE)
+  )
+
+# Create a kable table
+kable(summary_table, 
+      caption = "Summary of Vehicle Prices by Year",
+      col.names = c("Year", "Count", "Min Price", "Max Price", "Mean Price", "Median Price", "SD Price"),
+      format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
 ```
 
-The histogram in @fig-veh-price, price distribution across the years shows different patterns.
-In 2023, prices were clustered around the \$50,000 to \$60,000 range.
-However, by 2024, the range had widened, with more vehicles priced at both the lower and higher ends of the spectrum.
-In 2025, distinct pricing tiers became evident, suggesting the market was divided into different segments, including budget, mid-range, and luxury vehicles.
+The Table @tbl-veh-price above summarizes the key statistics of vehicle prices across the years 2023, 2024, and 2025.
+This table highlights several interesting points:
+
+-   In 2023, vehicle prices were relatively clustered around \$50,000 to \$60,000, with limited variation.
+
+-   By 2024, the distribution widened significantly, with vehicles available at both the lower and higher ends of the price spectrum, indicating greater market segmentation.
+
+-   In 2025, a more distinct pattern emerged, with pricing tiers forming clear categories.
+
+This suggests a division in the market into budget, mid-range, and luxury vehicles.
 
 ### Conclusion
 
-The analysis reveals that newer vehicles tend to be more expensive, with a notable price increase in 2025.
-The broader range of prices in 2024 and 2025 reflects greater market segmentation, offering consumers more choices in terms of budget, mid-range, and luxury models.
-These trends are likely influenced by advancements in vehicle technology and market conditions.
+This analysis set out to determine whether newer vehicles are consistently more expensive, a critical question for both consumers and industry professionals.
+The results confirm that vehicle prices have generally increased over time, with a notable spike in 2025.
+This price rise aligns with our hypothesis that newer vehicles tend to command higher prices due to advancements in technology and evolving market demands.
+
+The broader range of prices observed in 2024 and 2025 suggests greater market segmentation, providing consumers with a wider array of options, from budget to luxury models.
+These trends likely reflect both technological advancements, such as electric and autonomous vehicles, and external factors like supply chain disruptions (e.g., chip shortages) and inflationary pressures.
+
+According to **Citation**, factors such as technological innovation, environmental regulations, and economic conditions play a significant role in shaping vehicle prices, which is consistent with the findings of this analysis.
 
 **Citation**:\
 Jones, M.
